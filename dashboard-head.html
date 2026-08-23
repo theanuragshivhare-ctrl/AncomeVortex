@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Head Executive Workspace | AncomeVortex</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23030712' stroke='%2300f2fe' stroke-width='6'/><polygon points='50,18 78,74 22,74' fill='none' stroke='%2300f2fe' stroke-width='5'/><circle cx='50' cy='50' r='8' fill='%2300f2fe'/></svg>">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <div class="cyber-grid-bg"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 40 40" width="32" height="32">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+            <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-text" style="font-size: 1.15rem;">ANCOME<span>VORTEX</span></span>
+          <div class="text-dim font-mono" style="font-size: 0.65rem;">EXECUTIVE OS v4.2</div>
+        </div>
+      </div>
+
+      <!-- Current User Profile Chip -->
+      <div class="sidebar-profile">
+        <div class="d-flex align-items-center gap-3">
+          <img src="" alt="Avatar" class="user-avatar-sm user-avatar-target">
+          <div class="overflow-hidden">
+            <div class="fw-bold text-white text-truncate user-name-target">Head Admin</div>
+            <span class="role-badge role-badge-head user-role-badge-target">HEAD / SUPER ADMIN</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <ul class="sidebar-menu">
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link active" data-tab="tab-overview" onclick="switchDashboardTab('tab-overview')">
+            <i class="bi bi-speedometer2"></i> Global Overview
+          </a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link" data-tab="tab-users" onclick="switchDashboardTab('tab-users')">
+            <i class="bi bi-people-fill"></i> User Management
+          </a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link" data-tab="tab-projects" onclick="switchDashboardTab('tab-projects')">
+            <i class="bi bi-diagram-3-fill"></i> Projects Governance
+          </a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link" data-tab="tab-inquiries" onclick="switchDashboardTab('tab-inquiries')">
+            <i class="bi bi-inbox-fill"></i> Telemetry Inquiries
+          </a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link" data-tab="tab-audit" onclick="switchDashboardTab('tab-audit')">
+            <i class="bi bi-shield-check"></i> Security & Audit Logs
+          </a>
+        </li>
+      </ul>
+
+      <!-- Sidebar Footer Links -->
+      <div class="sidebar-footer d-flex justify-content-between align-items-center">
+        <a href="index.html" class="text-muted-custom small text-decoration-none hover-cyber-glow">
+          <i class="bi bi-arrow-left-circle me-1"></i> Public Site
+        </a>
+        <button class="btn btn-sm btn-cyber-outline py-1 px-2" onclick="Auth.logout()">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="dashboard-main">
+      <!-- Top Header -->
+      <header class="dashboard-header">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-cyber-outline d-lg-none" id="sidebarToggle">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <h5 class="text-white mb-0 sub-heading d-none d-sm-block">Executive Command Center</h5>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <div class="d-none d-md-flex align-items-center gap-2 font-mono text-cyan small">
+            <i class="bi bi-record-circle text-success animate-pulse-glow"></i> CLUSTER-ROOT ONLINE
+          </div>
+          <button class="btn btn-sm btn-cyber-primary" onclick="Auth.logout()">
+            <i class="bi bi-power me-1"></i> Terminate Session
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <main class="dashboard-body">
+
+        <!-- TAB 1: GLOBAL OVERVIEW -->
+        <section id="tab-overview" class="dashboard-tab-pane active">
+          <!-- Metric Cards Row -->
+          <div class="row g-4 mb-4">
+            <div class="col-xl-3 col-sm-6">
+              <div class="glass-panel p-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-muted-custom sub-heading small">Active Profiles</span>
+                  <div class="tech-card-icon-wrap mb-0" style="width: 42px; height: 42px; font-size: 1.2rem;">
+                    <i class="bi bi-people"></i>
+                  </div>
+                </div>
+                <div class="text-cyan fw-bold fs-3" id="totalUsersCount">4</div>
+                <div class="text-dim small font-mono mt-1"><i class="bi bi-arrow-up text-success"></i> RBAC Synced</div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-sm-6">
+              <div class="glass-panel p-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-muted-custom sub-heading small">Total Inquiries</span>
+                  <div class="tech-card-icon-wrap mb-0" style="width: 42px; height: 42px; font-size: 1.2rem;">
+                    <i class="bi bi-inboxes"></i>
+                  </div>
+                </div>
+                <div class="text-cyan fw-bold fs-3" id="totalInquiriesCount">3</div>
+                <div class="text-dim small font-mono mt-1"><i class="bi bi-shield-check text-cyan"></i> Real-Time Queue</div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-sm-6">
+              <div class="glass-panel p-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-muted-custom sub-heading small">Deployed Nodes</span>
+                  <div class="tech-card-icon-wrap mb-0" style="width: 42px; height: 42px; font-size: 1.2rem;">
+                    <i class="bi bi-hdd-network"></i>
+                  </div>
+                </div>
+                <div class="text-cyan fw-bold fs-3">1.4M+</div>
+                <div class="text-dim small font-mono mt-1">LoRa / 5G Mesh</div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-sm-6">
+              <div class="glass-panel p-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-muted-custom sub-heading small">System Uptime</span>
+                  <div class="tech-card-icon-wrap mb-0" style="width: 42px; height: 42px; font-size: 1.2rem;">
+                    <i class="bi bi-cpu"></i>
+                  </div>
+                </div>
+                <div class="text-cyan fw-bold fs-3">99.98%</div>
+                <div class="text-dim small font-mono mt-1">Zero Downtime SLA</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Access Cards -->
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <div class="cyber-table-card">
+                <div class="cyber-table-header">
+                  <h6 class="text-white mb-0 sub-heading"><i class="bi bi-diagram-3 me-2 text-cyan"></i>Active Project Blueprints</h6>
+                  <button class="btn btn-sm btn-cyber-primary" data-bs-toggle="modal" data-bs-target="#addProjectModal">
+                    <i class="bi bi-plus-lg"></i> New Blueprint
+                  </button>
+                </div>
+                <div class="table-responsive">
+                  <table class="table cyber-table">
+                    <thead>
+                      <tr>
+                        <th>Project & Code</th>
+                        <th>Sprint Progress</th>
+                        <th>Engineering Lead</th>
+                        <th>Status</th>
+                        <th>Budget</th>
+                        <th class="text-end">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="headProjectsTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="glass-panel p-4 h-100">
+                <h6 class="text-white sub-heading mb-3"><i class="bi bi-shield-lock me-2 text-cyan"></i>Root Authority Tools</h6>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-cyber-outline text-start py-2" onclick="switchDashboardTab('tab-users')">
+                    <i class="bi bi-person-plus-fill text-cyan me-2"></i> Manage User Profiles
+                  </button>
+                  <button class="btn btn-cyber-outline text-start py-2" onclick="switchDashboardTab('tab-inquiries')">
+                    <i class="bi bi-envelope-paper-fill text-cyan me-2"></i> Triage Client Inquiries
+                  </button>
+                  <button class="btn btn-cyber-outline text-start py-2" onclick="switchDashboardTab('tab-audit')">
+                    <i class="bi bi-file-earmark-lock text-cyan me-2"></i> View Security Audit Logs
+                  </button>
+                  <a href="ancomevortex-project.zip" download class="btn btn-cyber-primary text-start py-2">
+                    <i class="bi bi-file-earmark-zip-fill me-2"></i> Download Full Project (.ZIP)
+                  </a>
+                  <a href="projects.html" class="btn btn-cyber-outline text-start py-2">
+                    <i class="bi bi-eye-fill text-cyan me-2"></i> Preview Public Blueprint Hub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2: USER MANAGEMENT -->
+        <section id="tab-users" class="dashboard-tab-pane" style="display: none;">
+          <div class="cyber-table-card">
+            <div class="cyber-table-header">
+              <div>
+                <h5 class="text-white mb-0 sub-heading"><i class="bi bi-people-fill text-cyan me-2"></i>Security Identities & RBAC</h5>
+                <span class="text-dim small font-mono">Manage credentials, grant permissions, and de-provision profiles</span>
+              </div>
+              <button class="btn btn-sm btn-cyber-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                <i class="bi bi-person-plus-fill me-1"></i> Provision New User
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="table cyber-table">
+                <thead>
+                  <tr>
+                    <th>User & Identity</th>
+                    <th>Role Clearance</th>
+                    <th>Account Status</th>
+                    <th>Provisioned Date</th>
+                    <th class="text-end">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="usersTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 3: PROJECTS GOVERNANCE -->
+        <section id="tab-projects" class="dashboard-tab-pane" style="display: none;">
+          <div class="cyber-table-card">
+            <div class="cyber-table-header">
+              <div>
+                <h5 class="text-white mb-0 sub-heading"><i class="bi bi-diagram-3-fill text-cyan me-2"></i>Project Blueprint Portfolio</h5>
+                <span class="text-dim small font-mono">Real-time budget tracking, sprint milestone checklists, and technical leads</span>
+              </div>
+              <button class="btn btn-sm btn-cyber-primary" data-bs-toggle="modal" data-bs-target="#addProjectModal">
+                <i class="bi bi-plus-lg me-1"></i> Deploy New Blueprint
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="table cyber-table">
+                <thead>
+                  <tr>
+                    <th>Project & Code</th>
+                    <th>Sprint Progress</th>
+                    <th>Engineering Lead</th>
+                    <th>Status</th>
+                    <th>Budget</th>
+                    <th class="text-end">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="headProjectsTableBodyDuplicate" class="sync-head-projects"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 4: INQUIRIES -->
+        <section id="tab-inquiries" class="dashboard-tab-pane" style="display: none;">
+          <div class="cyber-table-card">
+            <div class="cyber-table-header">
+              <div>
+                <h5 class="text-white mb-0 sub-heading"><i class="bi bi-inbox-fill text-cyan me-2"></i>Client Telemetry Inquiries</h5>
+                <span class="text-dim small font-mono">Incoming project parameters dispatched from contact endpoints & client dashboards</span>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table cyber-table">
+                <thead>
+                  <tr>
+                    <th>Client & Organization</th>
+                    <th>Discipline</th>
+                    <th>Triage Status</th>
+                    <th>Assigned Lead</th>
+                    <th>Received Timestamp</th>
+                    <th class="text-end">Inspect</th>
+                  </tr>
+                </thead>
+                <tbody id="headInquiriesTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 5: AUDIT LOGS -->
+        <section id="tab-audit" class="dashboard-tab-pane" style="display: none;">
+          <div class="glass-panel p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div>
+                <h5 class="text-white mb-0 sub-heading"><i class="bi bi-shield-check text-cyan me-2"></i>Security Telemetry Audit Stream</h5>
+                <span class="text-dim small font-mono">Cryptographic log of all system authorizations, CRUD actions, and parameter changes</span>
+              </div>
+              <span class="badge-cyber mb-0 py-1 px-2" style="font-size: 0.75rem;">IMMUTABLE RECORD</span>
+            </div>
+            <div id="auditLogsList"></div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal: Provision User -->
+  <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-glass">
+        <div class="modal-header modal-header-glass">
+          <h5 class="modal-title text-gradient-cyan">Provision User Identity</h5>
+          <button type="button" class="btn-close btn-close-cyber" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="addUserForm" onsubmit="handleCreateUser(event)">
+          <div class="modal-body p-4">
+            <div class="mb-3">
+              <label class="cyber-form-label">Full Name *</label>
+              <input type="text" class="form-control cyber-form-control" id="newUserName" placeholder="Dr. Alexander Wright" required>
+            </div>
+            <div class="mb-3">
+              <label class="cyber-form-label">Corporate Email *</label>
+              <input type="email" class="form-control cyber-form-control" id="newUserEmail" placeholder="a.wright@ancomevortex.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="cyber-form-label">Security Key / Password *</label>
+              <input type="password" class="form-control cyber-form-control" id="newUserPassword" placeholder="Minimum 6 characters" required>
+            </div>
+            <div class="mb-3">
+              <label class="cyber-form-label">Role Clearance *</label>
+              <select class="form-select cyber-form-control cyber-select" id="newUserRole" required>
+                <option value="member">Member / Client</option>
+                <option value="employee">Employee / Engineer</option>
+                <option value="admin">Administration</option>
+                <option value="head">Head (Super Admin)</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="cyber-form-label">Department / Unit</label>
+              <input type="text" class="form-control cyber-form-control" id="newUserDepartment" placeholder="Robotics Systems / Quantum Lab">
+            </div>
+          </div>
+          <div class="modal-footer modal-footer-glass">
+            <button type="button" class="btn btn-cyber-outline btn-sm" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-cyber-primary btn-sm">Provision Identity</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Add Project Blueprint -->
+  <div class="modal fade" id="addProjectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-glass">
+        <div class="modal-header modal-header-glass">
+          <h5 class="modal-title text-gradient-cyan">Deploy Project Blueprint</h5>
+          <button type="button" class="btn-close btn-close-cyber" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="addProjectForm" onsubmit="handleCreateProject(event)">
+          <div class="modal-body p-4">
+            <div class="mb-3">
+              <label class="cyber-form-label">Blueprint Title *</label>
+              <input type="text" class="form-control cyber-form-control" id="newProjectTitle" placeholder="QuantumCore Sensor Mesh" required>
+            </div>
+            <div class="mb-3">
+              <label class="cyber-form-label">Discipline Category *</label>
+              <select class="form-select cyber-form-control cyber-select" id="newProjectCategory" required>
+                <option value="IoT Solutions">IoT Solutions</option>
+                <option value="Robotics">Robotics & Cobots</option>
+                <option value="Drone Technology">Drone Technology</option>
+                <option value="AI Automation">AI & Automation</option>
+                <option value="Software Solutions">Software Solutions</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="cyber-form-label">Engineering Lead *</label>
+              <input type="text" class="form-control cyber-form-control" id="newProjectLead" placeholder="Aria Chen" required>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="cyber-form-label">Budget Allocation</label>
+                <input type="text" class="form-control cyber-form-control" id="newProjectBudget" placeholder="$500k">
+              </div>
+              <div class="col-6">
+                <label class="cyber-form-label">Target Deadline</label>
+                <input type="date" class="form-control cyber-form-control" id="newProjectDeadline">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer modal-footer-glass">
+            <button type="button" class="btn btn-cyber-outline btn-sm" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-cyber-primary btn-sm">Deploy Blueprint</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Enforce Head / Super Admin Access
+    Auth.requireAuth(['head']);
+  </script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    // Sync duplicate table view if navigated directly
+    document.addEventListener('DOMContentLoaded', () => {
+      const dup = document.getElementById('headProjectsTableBodyDuplicate');
+      const orig = document.getElementById('headProjectsTableBody');
+      if (dup && orig) {
+        dup.innerHTML = orig.innerHTML;
+      }
+    });
+  </script>
+</body>
+</html>

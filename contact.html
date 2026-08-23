@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Project Inquiries | AncomeVortex IoT & TechSolutions</title>
+  <meta name="description" content="Transmit your project parameters to AncomeVortex IoT & TechSolutions. Direct contact channels for robotics, IoT, drone tech, AI automation, and custom hardware engineering.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23030712' stroke='%2300f2fe' stroke-width='6'/><polygon points='50,18 78,74 22,74' fill='none' stroke='%2300f2fe' stroke-width='5'/><circle cx='50' cy='50' r='8' fill='%2300f2fe'/></svg>">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <div class="cyber-grid-bg"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg cyber-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 40 40" width="36" height="36">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+            <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+          </svg>
+        </div>
+        <span class="brand-text">ANCOME<span>VORTEX</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <i class="bi bi-list text-cyan fs-2"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="techDropdown" role="button" data-bs-toggle="dropdown">
+              Technologies
+            </a>
+            <ul class="dropdown-menu dropdown-menu-cyber">
+              <li><a class="dropdown-item dropdown-item-cyber" href="robotics.html"><i class="bi bi-robot"></i> Robotics</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="drones.html"><i class="bi bi-send-check"></i> Drone Technology</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="iot.html"><i class="bi bi-broadcast-pin"></i> IoT Solutions</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="ai.html"><i class="bi bi-cpu"></i> AI & Automation</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="software.html"><i class="bi bi-code-slash"></i> Software Solutions</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="rnd.html"><i class="bi bi-fingerprint"></i> R&D Innovation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <a href="contact.html" class="btn-cyber-primary btn-cyber-sm">
+            <span>Start Project</span> <i class="bi bi-lightning-charge-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Subpage Hero -->
+  <header class="subpage-hero">
+    <div class="container text-center">
+      <div class="badge-cyber"><i class="bi bi-terminal-fill me-1"></i> Project Telemetry Dispatch</div>
+      <h1 class="display-5 text-gradient-cyan mb-3">Initiate Technical Consultation</h1>
+      <p class="text-muted-custom mx-auto" style="max-width: 720px;">
+        Connect with our Lead Systems Architects to evaluate requirements, establish NDA protocols, or request a customized cyber-physical system blueprint.
+      </p>
+    </div>
+  </header>
+
+  <!-- Contact Form & Direct Channels -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row gy-5">
+        <!-- Col 1: Professional Inquiry Form -->
+        <div class="col-lg-7">
+          <div class="glass-panel p-4 p-md-5">
+            <div class="badge-cyber mb-3">System Dispatch Form</div>
+            <h3 class="text-white mb-2">Transmit Your Requirements</h3>
+            <p class="text-muted-custom small mb-4">Complete the fields below. All submissions are encrypted and routed directly to our engineering desk.</p>
+
+            <div id="formAlertContainer"></div>
+
+            <form id="inquiryForm" novalidate>
+              <div class="row g-3">
+                <!-- Name -->
+                <div class="col-md-6">
+                  <label for="contactName" class="cyber-form-label">Full Name *</label>
+                  <input type="text" class="form-control cyber-form-control" id="contactName" placeholder="e.g. Commander Marcus Kane" required>
+                  <div class="invalid-feedback text-cyan small font-mono">Please provide your name.</div>
+                </div>
+
+                <!-- Company -->
+                <div class="col-md-6">
+                  <label for="contactCompany" class="cyber-form-label">Company / Organization *</label>
+                  <input type="text" class="form-control cyber-form-control" id="contactCompany" placeholder="e.g. Vortex Dynamics Corp" required>
+                  <div class="invalid-feedback text-cyan small font-mono">Please enter your company or affiliation.</div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6">
+                  <label for="contactEmail" class="cyber-form-label">Corporate Email *</label>
+                  <input type="email" class="form-control cyber-form-control" id="contactEmail" placeholder="name@organization.com" required>
+                  <div class="invalid-feedback text-cyan small font-mono">Please provide a valid email address.</div>
+                </div>
+
+                <!-- Phone -->
+                <div class="col-md-6">
+                  <label for="contactPhone" class="cyber-form-label">Phone Number *</label>
+                  <input type="tel" class="form-control cyber-form-control" id="contactPhone" placeholder="+1 (555) 019-2834" required>
+                  <div class="invalid-feedback text-cyan small font-mono">Please provide a contact number.</div>
+                </div>
+
+                <!-- Project Type -->
+                <div class="col-12">
+                  <label for="contactProjectType" class="cyber-form-label">Project Type / Domain *</label>
+                  <select class="form-select cyber-form-control cyber-select" id="contactProjectType" required>
+                    <option value="" selected disabled>Select primary technology discipline...</option>
+                    <option value="IoT Development">IoT Development & Industrial Mesh</option>
+                    <option value="Robotics Prototyping">Robotics Prototyping & Kinematics</option>
+                    <option value="Drone Solutions">Drone Solutions & Autonomous UAVs</option>
+                    <option value="AI Automation">AI Automation & Edge Neural Vision</option>
+                    <option value="Web & Mobile Apps">Web & Mobile Apps (3D Digital Twins)</option>
+                    <option value="Hardware Integration">Hardware Integration & Custom PCB</option>
+                    <option value="Custom R&D Innovation">Custom R&D & Quantum Sensing</option>
+                  </select>
+                  <div class="invalid-feedback text-cyan small font-mono">Please select a project type.</div>
+                </div>
+
+                <!-- Message -->
+                <div class="col-12">
+                  <label for="contactMessage" class="cyber-form-label">System Specs / Project Scope *</label>
+                  <textarea class="form-control cyber-form-control" id="contactMessage" rows="5" placeholder="Detail your project specifications, operational constraints, target deployment timeline, and technical objectives..." required></textarea>
+                  <div class="invalid-feedback text-cyan small font-mono">Please include a brief message detailing your scope.</div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn-cyber-primary btn-lg w-100">
+                    <span>Transmit Telemetry Dispatch</span> <i class="bi bi-send-fill ms-2"></i>
+                  </button>
+                  <div class="text-center text-dim small font-mono mt-3">
+                    <i class="bi bi-lock-fill text-cyan me-1"></i> 256-Bit Encrypted Telemetry • Strict NDA Guaranteed
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Col 2: Global HQ, Operations Hub & Location HUD -->
+        <div class="col-lg-5">
+          <div class="d-flex flex-column gap-4">
+            <!-- Contact Card 1 -->
+            <div class="glass-panel p-4">
+              <div class="d-flex align-items-start gap-3">
+                <div class="tech-card-icon-wrap mb-0" style="width: 50px; height: 50px; font-size: 1.3rem;">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div>
+                  <h5 class="text-white mb-1">Global Research HQs</h5>
+                  <p class="text-muted-custom small mb-0">
+                    Silicon Vortex Innovation Center<br>
+                    Suite 900, Cyber Parkway, CA 94025<br>
+                    United States
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Card 2 -->
+            <div class="glass-panel p-4">
+              <div class="d-flex align-items-start gap-3">
+                <div class="tech-card-icon-wrap mb-0" style="width: 50px; height: 50px; font-size: 1.3rem;">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <div>
+                  <h5 class="text-white mb-1">24/7 Operations Desk</h5>
+                  <p class="text-muted-custom small mb-1">Direct Telemetry Hotlines:</p>
+                  <div class="font-mono text-cyan small">+1 (800) 555-VORTEX (Toll Free)</div>
+                  <div class="font-mono text-cyan small">+1 (415) 890-4492 (Intl Ops)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Card 3 -->
+            <div class="glass-panel p-4">
+              <div class="d-flex align-items-start gap-3">
+                <div class="tech-card-icon-wrap mb-0" style="width: 50px; height: 50px; font-size: 1.3rem;">
+                  <i class="bi bi-envelope-at-fill"></i>
+                </div>
+                <div>
+                  <h5 class="text-white mb-1">Direct Inquiries</h5>
+                  <p class="text-muted-custom small mb-1">Encrypted Channels:</p>
+                  <div class="font-mono text-cyan small">dispatch@ancomevortex.com</div>
+                  <div class="font-mono text-cyan small">engineering@ancomevortex.com</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live HUD Status Card -->
+            <div class="glass-panel p-4 blueprint-card">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="text-cyan font-mono small fw-bold"><i class="bi bi-broadcast me-1"></i> SYSTEM STATUS</span>
+                <span class="badge bg-success text-black font-mono small px-2 py-1">ONLINE</span>
+              </div>
+              <p class="text-dim font-mono small mb-0">
+                All 6 R&D simulation clusters operational. Inquiries are processed within standard 24-hour turnaround windows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-black bg-opacity-25 border-top border-cyan border-opacity-10">
+    <div class="container">
+      <div class="row justify-content-center text-center section-header">
+        <div class="col-lg-8">
+          <div class="badge-cyber">Frequently Asked Questions</div>
+          <h2 class="display-6 text-gradient-cyan mb-3">Project Initiation Inquiries</h2>
+          <p class="text-muted-custom">
+            Common questions regarding engagement models, NDA protection, and turnaround times.
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="contactFaq">
+            <!-- FAQ 1 -->
+            <div class="glass-panel mb-3 border border-secondary border-opacity-25">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button bg-transparent text-white shadow-none font-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+                  How do you handle IP protection and NDAs?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#contactFaq">
+                <div class="accordion-body text-muted-custom small pt-0">
+                  Prior to reviewing any proprietary mechanical drawings or firmware, we execute bilateral Non-Disclosure Agreements (NDAs). All client intellectual property remains 100% owned by the client upon project completion.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="glass-panel mb-3 border border-secondary border-opacity-25">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed bg-transparent text-white shadow-none font-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                  What is the typical timeline for a hardware prototype?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                <div class="accordion-body text-muted-custom small pt-0">
+                  Rapid PCB bring-up and 3D printed mechanical enclosure iterations are typically completed within 3 to 6 weeks. Complete robotic manipulator or autonomous UAV prototypes typically range from 8 to 16 weeks depending on certifications.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="glass-panel mb-3 border border-secondary border-opacity-25">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed bg-transparent text-white shadow-none font-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                  Can you integrate with existing SCADA or cloud infrastructure?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                <div class="accordion-body text-muted-custom small pt-0">
+                  Yes. Our gateways and telemetry software natively bridge with existing Rockwell, Siemens, and Schneider PLCs, as well as AWS IoT Core, Azure IoT Hub, and custom on-premise Kafka/InfluxDB pipelines.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal fade" id="inquirySuccessModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-glass text-center p-4">
+        <div class="modal-body">
+          <div class="tech-card-icon-wrap mx-auto mb-3" style="width: 75px; height: 75px; font-size: 2.2rem;">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h4 class="text-gradient-cyan mb-2">Telemetry Dispatched Successfully</h4>
+          <p class="text-muted-custom small mb-4" id="inquiryConfirmationText">
+            Your inquiry parameters have been securely encrypted and transmitted to our engineering desk.
+          </p>
+          <button type="button" class="btn-cyber-primary btn-sm px-4" data-bs-dismiss="modal">
+            Acknowledge Receipt
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <a class="navbar-brand mb-3" href="index.html">
+              <div class="brand-logo-icon">
+                <svg viewBox="0 0 40 40" width="36" height="36">
+                  <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+                  <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+                  <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+                </svg>
+              </div>
+              <span class="brand-text">ANCOME<span>VORTEX</span></span>
+            </a>
+            <p class="text-muted-custom small">
+              AncomeVortex IoT & TechSolutions is an advanced cyber-physical engineering firm dedicated to connecting physical infrastructure with digital intelligence.
+            </p>
+            <div class="d-flex gap-3 mt-4">
+              <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social-link"><i class="fab fa-github"></i></a>
+              <a href="#" class="footer-social-link"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="footer-social-link"><i class="fab fa-discord"></i></a>
+              <a href="#" class="footer-social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5 class="text-white sub-heading mb-4">Navigation</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="projects.html" class="footer-link">Case Studies</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="rnd.html" class="footer-link">R&D Labs</a></li>
+            <li><a href="contact.html" class="footer-link text-cyan">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5 class="text-white sub-heading mb-4">Tech Domains</h5>
+          <ul class="list-unstyled">
+            <li><a href="robotics.html" class="footer-link">Robotics & Cobots</a></li>
+            <li><a href="drones.html" class="footer-link">Drone Technology</a></li>
+            <li><a href="iot.html" class="footer-link">Industrial IoT Mesh</a></li>
+            <li><a href="ai.html" class="footer-link">AI & Predictive Vision</a></li>
+            <li><a href="software.html" class="footer-link">Distributed Cloud OS</a></li>
+            <li><a href="rnd.html" class="footer-link">Smart Hardware</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5 class="text-white sub-heading mb-4">Telemetry Dispatch</h5>
+          <p class="text-muted-custom small">Subscribe to our monthly whitepapers on cyber-physical automation and edge intelligence.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed!'); this.reset();">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control cyber-form-control" placeholder="corp.email@domain.com" required>
+              <button class="btn btn-cyber-primary" type="submit"><i class="bi bi-send"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div class="text-dim small font-mono">
+          &copy; 2026 AncomeVortex IoT & TechSolutions. All Rights Reserved.
+        </div>
+        <div class="d-flex gap-4 small font-mono text-dim">
+          <a href="#" class="text-dim text-decoration-none hover-cyber-glow">Privacy Policy</a>
+          <a href="#" class="text-dim text-decoration-none hover-cyber-glow">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="btn-back-to-top" title="Back to Top"><i class="bi bi-chevron-up"></i></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

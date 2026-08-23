@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotics & Autonomous Systems | AncomeVortex</title>
+  <meta name="description" content="Autonomous Mobile Robots (AMRs), collaborative robotic arms, ROS 2 control architectures, and high-precision kinematics by AncomeVortex.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23030712' stroke='%2300f2fe' stroke-width='6'/><polygon points='50,18 78,74 22,74' fill='none' stroke='%2300f2fe' stroke-width='5'/><circle cx='50' cy='50' r='8' fill='%2300f2fe'/></svg>">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <div class="cyber-grid-bg"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg cyber-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 40 40" width="36" height="36">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+            <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+          </svg>
+        </div>
+        <span class="brand-text">ANCOME<span>VORTEX</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <i class="bi bi-list text-cyan fs-2"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="techDropdown" role="button" data-bs-toggle="dropdown">
+              Technologies
+            </a>
+            <ul class="dropdown-menu dropdown-menu-cyber">
+              <li><a class="dropdown-item dropdown-item-cyber active" href="robotics.html"><i class="bi bi-robot"></i> Robotics</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="drones.html"><i class="bi bi-send-check"></i> Drone Technology</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="iot.html"><i class="bi bi-broadcast-pin"></i> IoT Solutions</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="ai.html"><i class="bi bi-cpu"></i> AI & Automation</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="software.html"><i class="bi bi-code-slash"></i> Software Solutions</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="rnd.html"><i class="bi bi-fingerprint"></i> R&D Innovation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <a href="contact.html" class="btn-cyber-primary btn-cyber-sm">
+            <span>Start Project</span> <i class="bi bi-lightning-charge-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Subpage Hero -->
+  <header class="subpage-hero">
+    <div class="container text-center">
+      <div class="badge-cyber"><i class="bi bi-robot me-1"></i> Robotics Engineering</div>
+      <h1 class="display-5 text-gradient-cyan mb-3">Precision Kinematics & Swarm Robotics</h1>
+      <p class="text-muted-custom mx-auto" style="max-width: 720px;">
+        Engineering collaborative robots (cobots), high-speed delta manipulators, and Autonomous Mobile Robots (AMRs) driven by real-time ROS 2 and sub-millimeter force control.
+      </p>
+    </div>
+  </header>
+
+  <!-- Overview Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="badge-cyber">Kinematic Architecture</div>
+          <h2 class="display-6 text-gradient-cyan mb-4">Autonomous Motion with Zero Latency</h2>
+          <p class="text-muted-custom mb-3">
+            AncomeVortex builds advanced robotic motion platforms that interact dynamically with unpredictable environments. We combine direct torque control, harmonic drive gearboxes, and multi-axis spatial vision to deliver unmatched repeatable precision.
+          </p>
+          <p class="text-muted-custom mb-4">
+            Whether deploying heavy-load warehouse AMRs or microscopic cleanroom assembly arms, our firmware executes on real-time micro-kernels with deterministic execution times under 200 microseconds.
+          </p>
+          
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-center gap-3 text-light mb-3">
+              <i class="bi bi-check2-square text-cyan fs-4"></i>
+              <span><strong>Sub-Millimeter Repeatability:</strong> ±0.01 mm positional accuracy under dynamic loads.</span>
+            </li>
+            <li class="d-flex align-items-center gap-3 text-light mb-3">
+              <i class="bi bi-check2-square text-cyan fs-4"></i>
+              <span><strong>Human-Safe Cobots:</strong> Haptic collision detection meeting ISO 10218-1 / ISO/TS 15066 safety mandates.</span>
+            </li>
+            <li class="d-flex align-items-center gap-3 text-light">
+              <i class="bi bi-check2-square text-cyan fs-4"></i>
+              <span><strong>LiDAR SLAM Navigation:</strong> Real-time mapping and obstacle avoidance in changing floorplans.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="glass-panel p-4 position-relative">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" alt="Robotics System" class="img-fluid rounded-3 border border-secondary border-opacity-25 mb-4">
+            <div class="blueprint-card">
+              <h6 class="text-cyan sub-heading mb-2"><i class="bi bi-cpu-fill me-2"></i>Robotic System Specs</h6>
+              <div class="row g-2 text-dim small font-mono">
+                <div class="col-6">Payload: <strong class="text-white">5kg to 500kg</strong></div>
+                <div class="col-6">Cycle Rate: <strong class="text-white">120 picks/min</strong></div>
+                <div class="col-6">OS: <strong class="text-white">ROS 2 Humble / RTOS</strong></div>
+                <div class="col-6">Vision: <strong class="text-white">Stereo RGB-D + ToF</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robotics Capabilities Grid -->
+  <section class="section-padding bg-black bg-opacity-25 border-top border-bottom border-cyan border-opacity-10">
+    <div class="container">
+      <div class="row justify-content-center text-center section-header">
+        <div class="col-lg-8">
+          <div class="badge-cyber">Modular Robotic Solutions</div>
+          <h2 class="display-6 text-gradient-cyan mb-3">Enterprise Robotics Lineup</h2>
+          <p class="text-muted-custom">
+            Engineered for high-volume automated manufacturing, laboratory micro-handling, and logistics fulfillment.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Item 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-panel p-4 h-100">
+            <div class="text-cyan fs-2 mb-3"><i class="bi bi-robot"></i></div>
+            <h4 class="text-white mb-2">7-DoF Collaborative Arms</h4>
+            <p class="text-muted-custom small">Torque-sensing articulated arms designed for intricate electronic assembly, ultrasonic welding, and safe human-robot co-working.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-panel p-4 h-100">
+            <div class="text-cyan fs-2 mb-3"><i class="bi bi-truck-front"></i></div>
+            <h4 class="text-white mb-2">Autonomous Mobile Fleets (AMRs)</h4>
+            <p class="text-muted-custom small">Heavy-payload autonomous carriers with 360-degree safety LiDAR, dynamic pallet recognition, and automatic inductive floor charging.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-panel p-4 h-100">
+            <div class="text-cyan fs-2 mb-3"><i class="bi bi-eye"></i></div>
+            <h4 class="text-white mb-2">Spatial 3D Vision Systems</h4>
+            <p class="text-muted-custom small">Structured-light and Time-of-Flight (ToF) cameras coupled with neural pose estimation for unstructured bin picking and micro-inspection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-black bg-opacity-40 border-top border-cyan border-opacity-15">
+    <div class="container text-center">
+      <div class="glass-panel p-5">
+        <div class="badge-cyber mb-3">Deploy Robotic Automation</div>
+        <h2 class="display-6 text-gradient-cyan mb-3">Ready to Upgrade Your Manufacturing Line?</h2>
+        <p class="text-muted-custom mb-4 mx-auto" style="max-width: 600px;">
+          Consult with our robotics team to simulate custom end-effectors and assess your facility workflow.
+        </p>
+        <a href="contact.html" class="btn-cyber-primary">
+          <span>Inquire About Robotics Prototyping</span> <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <a class="navbar-brand mb-3" href="index.html">
+              <div class="brand-logo-icon">
+                <svg viewBox="0 0 40 40" width="36" height="36">
+                  <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+                  <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+                  <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+                </svg>
+              </div>
+              <span class="brand-text">ANCOME<span>VORTEX</span></span>
+            </a>
+            <p class="text-muted-custom small">
+              AncomeVortex IoT & TechSolutions is an advanced cyber-physical engineering firm dedicated to connecting physical infrastructure with digital intelligence.
+            </p>
+            <div class="d-flex gap-3 mt-4">
+              <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social-link"><i class="fab fa-github"></i></a>
+              <a href="#" class="footer-social-link"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="footer-social-link"><i class="fab fa-discord"></i></a>
+              <a href="#" class="footer-social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5 class="text-white sub-heading mb-4">Navigation</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="projects.html" class="footer-link">Case Studies</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="rnd.html" class="footer-link">R&D Labs</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5 class="text-white sub-heading mb-4">Tech Domains</h5>
+          <ul class="list-unstyled">
+            <li><a href="robotics.html" class="footer-link text-cyan">Robotics & Cobots</a></li>
+            <li><a href="drones.html" class="footer-link">Drone Technology</a></li>
+            <li><a href="iot.html" class="footer-link">Industrial IoT Mesh</a></li>
+            <li><a href="ai.html" class="footer-link">AI & Predictive Vision</a></li>
+            <li><a href="software.html" class="footer-link">Distributed Cloud OS</a></li>
+            <li><a href="rnd.html" class="footer-link">Smart Hardware</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5 class="text-white sub-heading mb-4">Telemetry Dispatch</h5>
+          <p class="text-muted-custom small">Subscribe to our monthly whitepapers on cyber-physical automation and edge intelligence.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed!'); this.reset();">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control cyber-form-control" placeholder="corp.email@domain.com" required>
+              <button class="btn btn-cyber-primary" type="submit"><i class="bi bi-send"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div class="text-dim small font-mono">
+          &copy; 2026 AncomeVortex IoT & TechSolutions. All Rights Reserved.
+        </div>
+        <div class="d-flex gap-4 small font-mono text-dim">
+          <a href="#" class="text-dim text-decoration-none hover-cyber-glow">Privacy Policy</a>
+          <a href="#" class="text-dim text-decoration-none hover-cyber-glow">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="btn-back-to-top" title="Back to Top"><i class="bi bi-chevron-up"></i></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

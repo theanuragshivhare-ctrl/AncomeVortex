@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Login | AncomeVortex IoT & TechSolutions</title>
+  <meta name="description" content="Secure role-based authentication portal for AncomeVortex systems architects, administrators, employees, and members.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23030712' stroke='%2300f2fe' stroke-width='6'/><polygon points='50,18 78,74 22,74' fill='none' stroke='%2300f2fe' stroke-width='5'/><circle cx='50' cy='50' r='8' fill='%2300f2fe'/></svg>">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="d-flex flex-column min-vh-100 justify-content-between">
+
+  <div class="cyber-grid-bg"></div>
+
+  <!-- Minimal Auth Navbar -->
+  <nav class="navbar cyber-navbar position-static">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 40 40" width="36" height="36">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+            <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+          </svg>
+        </div>
+        <span class="brand-text">ANCOME<span>VORTEX</span></span>
+      </a>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html" class="btn-cyber-outline btn-cyber-sm">
+          <i class="bi bi-house-door-fill me-1"></i> Public Home
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Main Container -->
+  <main class="container my-5 py-3">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="glass-panel p-4 p-md-5 position-relative">
+          
+          <div class="text-center mb-4">
+            <div class="badge-cyber mb-2"><i class="bi bi-shield-lock-fill me-1"></i> 256-Bit Cryptographic Portal</div>
+            <h2 class="text-gradient-cyan mb-1">System Authorization</h2>
+            <p class="text-muted-custom small">Sign in to access your role-based telemetry workspace</p>
+          </div>
+
+          <div id="loginAlertContainer"></div>
+
+          <!-- Login Form -->
+          <form id="loginForm" novalidate>
+            <div class="mb-3">
+              <label for="loginEmail" class="cyber-form-label">Corporate Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text bg-black border-cyan border-opacity-25 text-cyan"><i class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control cyber-form-control" id="loginEmail" placeholder="user@ancomevortex.com" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <label for="loginPassword" class="cyber-form-label mb-0">Password</label>
+                <a href="forgot-password.html" class="text-cyan small font-mono text-decoration-none hover-cyber-glow">Forgot Security Key?</a>
+              </div>
+              <div class="input-group mt-1">
+                <span class="input-group-text bg-black border-cyan border-opacity-25 text-cyan"><i class="bi bi-key"></i></span>
+                <input type="password" class="form-control cyber-form-control" id="loginPassword" placeholder="••••••••••••" required>
+                <button class="btn btn-outline-secondary border-cyan border-opacity-25 text-cyan" type="button" id="togglePasswordBtn">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                <label class="form-check-label text-dim small" for="rememberMe">
+                  Maintain persistent session
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-cyber-primary w-100 py-2 mb-3" id="submitLoginBtn">
+              <span>Authorize & Enter</span> <i class="bi bi-box-arrow-in-right ms-1"></i>
+            </button>
+
+            <div class="text-center font-mono small text-dim">
+              New client organization? <a href="register.html" class="text-cyan text-decoration-none fw-bold">Register Account</a>
+            </div>
+          </form>
+
+          <!-- One-Click Demo Role Pickers -->
+          <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+            <div class="text-center small font-mono text-dim mb-3">
+              <i class="bi bi-lightning-charge-fill text-cyan"></i> Quick One-Click Demo Role Login:
+            </div>
+            <div class="row g-2">
+              <div class="col-6">
+                <button type="button" class="btn btn-sm btn-cyber-outline w-100 text-truncate" onclick="quickLogin('head@ancomevortex.com', 'admin123')">
+                  <span class="text-danger">●</span> Head (Super Admin)
+                </button>
+              </div>
+              <div class="col-6">
+                <button type="button" class="btn btn-sm btn-cyber-outline w-100 text-truncate" onclick="quickLogin('admin@ancomevortex.com', 'admin123')">
+                  <span class="text-warning">●</span> Administration
+                </button>
+              </div>
+              <div class="col-6">
+                <button type="button" class="btn btn-sm btn-cyber-outline w-100 text-truncate" onclick="quickLogin('employee@ancomevortex.com', 'employee123')">
+                  <span class="text-info">●</span> Employee / R&D
+                </button>
+              </div>
+              <div class="col-6">
+                <button type="button" class="btn btn-sm btn-cyber-outline w-100 text-truncate" onclick="quickLogin('member@ancomevortex.com', 'member123')">
+                  <span class="text-success">●</span> Member / Client
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="text-center py-3 border-top border-secondary border-opacity-25 font-mono text-dim small">
+    &copy; 2026 AncomeVortex IoT & TechSolutions. Zero-Trust Access Gateway.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // If already logged in, redirect to dashboard
+      if (Auth.isLoggedIn()) {
+        const current = Auth.getCurrentUser();
+        window.location.href = `dashboard-${current.role}.html`;
+        return;
+      }
+
+      // Password Toggle
+      const toggleBtn = document.getElementById('togglePasswordBtn');
+      const passInput = document.getElementById('loginPassword');
+      if (toggleBtn && passInput) {
+        toggleBtn.addEventListener('click', () => {
+          const isPass = passInput.type === 'password';
+          passInput.type = isPass ? 'text' : 'password';
+          toggleBtn.innerHTML = isPass ? '<i class="bi bi-eye-slash"></i>' : '<i class="bi bi-eye"></i>';
+        });
+      }
+
+      // Login Form Submit
+      const form = document.getElementById('loginForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value.trim();
+        const remember = document.getElementById('rememberMe').checked;
+
+        const res = Auth.login(email, password, remember);
+        if (res.success) {
+          window.location.href = `dashboard-${res.user.role}.html`;
+        } else {
+          showLoginAlert(res.message, 'danger');
+        }
+      });
+
+      window.quickLogin = function(email, password) {
+        document.getElementById('loginEmail').value = email;
+        document.getElementById('loginPassword').value = password;
+        const res = Auth.login(email, password, true);
+        if (res.success) {
+          window.location.href = `dashboard-${res.user.role}.html`;
+        }
+      };
+
+      function showLoginAlert(msg, type) {
+        const container = document.getElementById('loginAlertContainer');
+        container.innerHTML = `
+          <div class="alert alert-${type} bg-dark border-cyan text-light d-flex align-items-center mb-3" role="alert">
+            <i class="bi bi-exclamation-octagon-fill text-danger fs-4 me-2"></i>
+            <div class="small font-mono">${msg}</div>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

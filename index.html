@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AncomeVortex IoT & TechSolutions | Cyber-Physical Intelligence</title>
+  <meta name="description" content="Connecting Physical Infrastructure with Digital Intelligence - Robotics, Drones, IoT, AI, Software, and Smart Hardware.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23030712' stroke='%2300f2fe' stroke-width='6'/><polygon points='50,18 78,74 22,74' fill='none' stroke='%2300f2fe' stroke-width='5'/><circle cx='50' cy='50' r='8' fill='%2300f2fe'/></svg>">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Cyber Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Background Grid Pattern -->
+  <div class="cyber-grid-bg"></div>
+
+  <!-- Main Navigation -->
+  <nav class="navbar navbar-expand-lg cyber-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 40 40" width="36" height="36">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+            <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+          </svg>
+        </div>
+        <span class="brand-text">ANCOME<span>VORTEX</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list text-cyan fs-2"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <!-- Tech Domains Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="techDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Technologies
+            </a>
+            <ul class="dropdown-menu dropdown-menu-cyber" aria-labelledby="techDropdown">
+              <li><a class="dropdown-item dropdown-item-cyber" href="robotics.html"><i class="bi bi-robot"></i> Robotics</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="drones.html"><i class="bi bi-send-check"></i> Drone Technology</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="iot.html"><i class="bi bi-broadcast-pin"></i> IoT Solutions</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="ai.html"><i class="bi bi-cpu"></i> AI & Automation</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="software.html"><i class="bi bi-code-slash"></i> Software Solutions</a></li>
+              <li><a class="dropdown-item dropdown-item-cyber" href="rnd.html"><i class="bi bi-fingerprint"></i> R&D Innovation</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+          <a href="contact.html" class="btn-cyber-primary btn-cyber-sm">
+            <span>Start Project</span> <i class="bi bi-lightning-charge-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <canvas id="hero-particles"></canvas>
+    
+    <div class="container hero-content">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7">
+          <div class="badge-cyber">
+            <span>Cyber-Physical Intelligence 4.0</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="text-white">AncomeVortex</span><br>
+            <span class="text-gradient-cyan">IoT & TechSolutions</span>
+          </h1>
+          <p class="hero-subtitle">
+            Connecting Physical Infrastructure with Digital Intelligence. We architect resilient autonomous robotics, intelligent drone systems, industrial IoT mesh telemetry, and cognitive AI automation.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="#technologies" class="btn-cyber-primary">
+              <span>Explore Technologies</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="contact.html" class="btn-cyber-outline">
+              <i class="bi bi-terminal-fill"></i>
+              <span>Start Your Project</span>
+            </a>
+          </div>
+
+          <!-- Hero Telemetry Stats -->
+          <div class="hero-stats-wrapper">
+            <div class="row g-4">
+              <div class="col-4">
+                <div class="stat-item">
+                  <div class="stat-number">
+                    <span class="counter-value" data-target="99.98" data-decimals="2" data-suffix="%">0%</span>
+                  </div>
+                  <div class="stat-label">System Uptime</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-item">
+                  <div class="stat-number">
+                    <span class="counter-value" data-target="1.4" data-decimals="1" data-suffix="M+">0</span>
+                  </div>
+                  <div class="stat-label">Telemetry Nodes</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-item">
+                  <div class="stat-number">
+                    <span class="counter-value" data-target="45" data-decimals="0" data-suffix="+">0</span>
+                  </div>
+                  <div class="stat-label">Autonomous Fleets</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Futuristic Hologram / HUD Interactive Visual -->
+        <div class="col-lg-5 text-center">
+          <div class="hero-visual-wrapper">
+            <div class="hud-hologram-ring">
+              <div class="hud-hologram-inner">
+                <div class="hud-core-icon">
+                  <i class="bi bi-cpu"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating HUD Badges -->
+            <div class="hud-floating-badge badge-pos-1">
+              <i class="bi bi-shield-check text-cyan fs-4"></i>
+              <div class="text-start">
+                <div class="fw-bold small text-white">Zero-Latency Mesh</div>
+                <div class="font-mono text-dim small">Sub-5ms Protocol</div>
+              </div>
+            </div>
+
+            <div class="hud-floating-badge badge-pos-2">
+              <i class="bi bi-robot text-cyan fs-4"></i>
+              <div class="text-start">
+                <div class="fw-bold small text-white">Autonomous Cobots</div>
+                <div class="font-mono text-dim small">ROS 2 Orchestrated</div>
+              </div>
+            </div>
+
+            <div class="hud-floating-badge badge-pos-3">
+              <i class="bi bi-broadcast text-cyan fs-4"></i>
+              <div class="text-start">
+                <div class="fw-bold small text-white">Quantum Telemetry</div>
+                <div class="font-mono text-dim small">Encrypted Stream</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Technology Cards Section -->
+  <section id="technologies" class="section-padding">
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row justify-content-center text-center section-header">
+        <div class="col-lg-8">
+          <div class="badge-cyber">Core Technological Ecosystem</div>
+          <h2 class="display-6 text-gradient-cyan mb-3">Engineered for Next-Gen Operations</h2>
+          <p class="text-muted-custom">
+            Deploying resilient cyber-physical systems that unify autonomous edge compute, robotics kinematics, and real-time sensory infrastructure.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. Robotics -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-100">
+          <div class="tech-card">
+            <div>
+              <div class="tech-card-icon-wrap">
+                <i class="bi bi-robot"></i>
+              </div>
+              <h3 class="tech-card-title">Robotics</h3>
+              <p class="tech-card-desc">
+                High-precision 7-DoF robotic manipulation, Autonomous Mobile Robots (AMRs), collaborative assembly arms, and spatial vision kinodynamics.
+              </p>
+            </div>
+            <a href="robotics.html" class="tech-card-link">
+              Explore Robotics <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Drones -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-200">
+          <div class="tech-card">
+            <div>
+              <div class="tech-card-icon-wrap">
+                <i class="bi bi-send-check"></i>
+              </div>
+              <h3 class="tech-card-title">Drones</h3>
+              <p class="tech-card-desc">
+                Autonomous industrial UAVs equipped with 3D LiDAR point cloud generation, thermal vision, pipeline diagnostics, and long-range flight endurance.
+              </p>
+            </div>
+            <a href="drones.html" class="tech-card-link">
+              Explore Drone Tech <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. IoT -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-300">
+          <div class="tech-card">
+            <div>
+              <div class="tech-card-icon-wrap">
+                <i class="bi bi-broadcast-pin"></i>
+              </div>
+              <h3 class="tech-card-title">IoT</h3>
+              <p class="tech-card-desc">
+                Industrial IoT mesh nodes, low-power LoRaWAN gateways, real-time SCADA telemetry pipelines, and micro-power energy harvesting sensors.
+              </p>
+            </div>
+            <a href="iot.html" class="tech-card-link">
+              Explore IoT Solutions <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. AI -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-100">
+          <div class="tech-card">
+            <div>
+              <div class="tech-card-icon-wrap">
+                <i class="bi bi-cpu"></i>
+              </div>
+              <h3 class="tech-card-title">AI</h3>
+              <p class="tech-card-desc">
+                Quantized edge neural inference, predictive acoustic vibration monitoring, autonomous computer vision, and real-time anomaly prevention.
+              </p>
+            </div>
+            <a href="ai.html" class="tech-card-link">
+              Explore AI & Automation <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Software -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-200">
+          <div class="tech-card">
+            <div>
+              <div class="tech-card-icon-wrap">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h3 class="tech-card-title">Software</h3>
+              <p class="tech-card-desc">
+                High-throughput distributed cloud architectures, digital twin dashboards, ultra-low latency gRPC pipelines, and cross-platform monitoring suites.
+              </p>
+            </div>
+            <a href="software.html" class="tech-card-link">
+              Explore Software <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. Smart Hardware -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-300">
+          <div class="tech-card">
+            <div>
+              <div class="tech-card-icon-wrap">
+                <i class="bi bi-motherboard"></i>
+              </div>
+              <h3 class="tech-card-title">Smart Hardware</h3>
+              <p class="tech-card-desc">
+                Custom embedded PCB engineering, ARM Cortex & FPGA design, ultra-ruggedized IP68 enclosures, and non-terrestrial satellite telemetry modules.
+              </p>
+            </div>
+            <a href="rnd.html" class="tech-card-link">
+              Explore Hardware & R&D <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Futuristic Projects Section -->
+  <section class="section-padding bg-black bg-opacity-25 border-top border-bottom border-cyan border-opacity-10">
+    <div class="container">
+      <div class="row align-items-end mb-5">
+        <div class="col-lg-8">
+          <div class="badge-cyber">Battle-Tested Innovations</div>
+          <h2 class="display-6 text-gradient-cyan mb-2">Featured Project Blueprints</h2>
+          <p class="text-muted-custom mb-0">
+            Real-world deployments across energy grids, aerospace, precision robotics, and mission-critical cloud infrastructure.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+          <a href="projects.html" class="btn-cyber-outline btn-cyber-sm">
+            <span>View All Case Studies</span> <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs-wrapper">
+        <button class="btn-filter active" data-filter="all">All Disciplines</button>
+        <button class="btn-filter" data-filter="iot">IoT & Sensors</button>
+        <button class="btn-filter" data-filter="drones">Drone Tech</button>
+        <button class="btn-filter" data-filter="robotics">Robotics</button>
+        <button class="btn-filter" data-filter="ai">AI Automation</button>
+        <button class="btn-filter" data-filter="software">Cloud Software</button>
+      </div>
+
+      <!-- 6 Futuristic Project Cards (Generated via projects.js) -->
+      <div class="row" id="projects-grid-container">
+        <!-- Javascript dynamic render -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center section-header">
+        <div class="col-lg-8">
+          <div class="badge-cyber">End-to-End Capabilities</div>
+          <h2 class="display-6 text-gradient-cyan mb-3">Specialized Tech Engineering Services</h2>
+          <p class="text-muted-custom">
+            From initial physics simulation to mass hardware fabrication and scalable cloud telemetry deployment.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1: IoT Development -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-100">
+          <div class="service-card">
+            <i class="bi bi-hdd-network service-icon"></i>
+            <h4 class="text-white mb-2">IoT Development</h4>
+            <p class="text-muted-custom small">Full-stack industrial IoT sensor node development, LoRa/BLE gateway mesh, and telemetry cloud brokers.</p>
+            <ul class="service-checklist">
+              <li><i class="bi bi-check2-circle"></i> Custom Sensor Hardware Design</li>
+              <li><i class="bi bi-check2-circle"></i> LoRaWAN & NB-IoT Networks</li>
+              <li><i class="bi bi-check2-circle"></i> Micro-Power Firmware (FreeRTOS)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 2: Robotics Prototyping -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-200">
+          <div class="service-card">
+            <i class="bi bi-gear-wide-connected service-icon"></i>
+            <h4 class="text-white mb-2">Robotics Prototyping</h4>
+            <p class="text-muted-custom small">Custom robotic arm end-effectors, AGV/AMR chassis design, ROS 2 software integration, and kinematic simulations.</p>
+            <ul class="service-checklist">
+              <li><i class="bi bi-check2-circle"></i> 6-DoF & 7-DoF Cobot Tuning</li>
+              <li><i class="bi bi-check2-circle"></i> LiDAR SLAM Navigation</li>
+              <li><i class="bi bi-check2-circle"></i> Hardware-in-the-Loop Testing</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 3: Drone Solutions -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-300">
+          <div class="service-card">
+            <i class="bi bi-airplane-engines service-icon"></i>
+            <h4 class="text-white mb-2">Drone Solutions</h4>
+            <p class="text-muted-custom small">Enterprise UAV platform customization, aerial LiDAR inspection setups, and autonomous docking recharge hubs.</p>
+            <ul class="service-checklist">
+              <li><i class="bi bi-check2-circle"></i> Autonomous Waypoint Systems</li>
+              <li><i class="bi bi-check2-circle"></i> Real-Time 4K & Thermal Video</li>
+              <li><i class="bi bi-check2-circle"></i> Beyond Visual Line of Sight (BVLOS)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 4: AI Automation -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-100">
+          <div class="service-card">
+            <i class="bi bi-diagram-3 service-icon"></i>
+            <h4 class="text-white mb-2">AI Automation</h4>
+            <p class="text-muted-custom small">Edge vision defect detection, predictive maintenance models, neural telemetry anomaly alarms, and automated agents.</p>
+            <ul class="service-checklist">
+              <li><i class="bi bi-check2-circle"></i> Quantized TensorRT Models</li>
+              <li><i class="bi bi-check2-circle"></i> Acoustic Vibration Analysis</li>
+              <li><i class="bi bi-check2-circle"></i> 99.4% Anomaly Precision</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 5: Web & Mobile Apps -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-200">
+          <div class="service-card">
+            <i class="bi bi-window-desktop service-icon"></i>
+            <h4 class="text-white mb-2">Web & Mobile Apps</h4>
+            <p class="text-muted-custom small">Ultra-fast telemetry dashboards, 3D digital twin web consoles, and native mobile fleet monitoring apps.</p>
+            <ul class="service-checklist">
+              <li><i class="bi bi-check2-circle"></i> Real-Time WebSocket/gRPC UI</li>
+              <li><i class="bi bi-check2-circle"></i> WebGL 3D Digital Twins</li>
+              <li><i class="bi bi-check2-circle"></i> iOS & Android Field SDKs</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 6: Hardware Integration -->
+        <div class="col-lg-4 col-md-6 reveal-fade-up delay-300">
+          <div class="service-card">
+            <i class="bi bi-cpu-fill service-icon"></i>
+            <h4 class="text-white mb-2">Hardware Integration</h4>
+            <p class="text-muted-custom small">Turnkey PCB routing, micro-controller firmware flashing, ruggedized enclosure CNC machining, and CE/FCC certification.</p>
+            <ul class="service-checklist">
+              <li><i class="bi bi-check2-circle"></i> Multi-layer High Speed PCB</li>
+              <li><i class="bi bi-check2-circle"></i> IP68 Sealed Enclosures</li>
+              <li><i class="bi bi-check2-circle"></i> EMC & Thermal Validation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="services.html" class="btn-cyber-primary">
+          <span>Explore All Service Details</span> <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Contact CTA Section -->
+  <section class="section-padding bg-black bg-opacity-40 border-top border-cyan border-opacity-15">
+    <div class="container">
+      <div class="row align-items-center justify-content-between glass-panel p-5">
+        <div class="col-lg-7">
+          <div class="badge-cyber">Initialize Collaboration</div>
+          <h2 class="display-6 text-gradient-cyan mb-3">Ready to Connect Your Infrastructure?</h2>
+          <p class="text-muted-custom mb-4 mb-lg-0">
+            Partner with AncomeVortex engineers to design, prototype, and scale your autonomous systems, IoT networks, or enterprise cloud platforms.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="contact.html" class="btn-cyber-primary btn-lg w-100 mb-3">
+            <span>Transmit Inquiry</span> <i class="bi bi-send-fill ms-2"></i>
+          </a>
+          <div class="text-dim small font-mono text-center">
+            <i class="bi bi-shield-lock-fill text-cyan me-1"></i> End-to-End NDA Protected
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Futuristic Footer -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <a class="navbar-brand mb-3" href="index.html">
+              <div class="brand-logo-icon">
+                <svg viewBox="0 0 40 40" width="36" height="36">
+                  <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+                  <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+                  <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+                </svg>
+              </div>
+              <span class="brand-text">ANCOME<span>VORTEX</span></span>
+            </a>
+            <p class="text-muted-custom small">
+              AncomeVortex IoT & TechSolutions is an advanced cyber-physical engineering firm dedicated to connecting physical infrastructure with digital intelligence.
+            </p>
+            <div class="d-flex gap-3 mt-4">
+              <a href="#" class="footer-social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="footer-social-link" title="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="footer-social-link" title="Discord"><i class="fab fa-discord"></i></a>
+              <a href="#" class="footer-social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-4">
+          <h5 class="text-white sub-heading mb-4">Navigation</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="projects.html" class="footer-link">Case Studies</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="rnd.html" class="footer-link">R&D Labs</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Technology Domains -->
+        <div class="col-lg-3 col-md-4">
+          <h5 class="text-white sub-heading mb-4">Tech Domains</h5>
+          <ul class="list-unstyled">
+            <li><a href="robotics.html" class="footer-link">Robotics & Cobots</a></li>
+            <li><a href="drones.html" class="footer-link">Drone Technology</a></li>
+            <li><a href="iot.html" class="footer-link">Industrial IoT Mesh</a></li>
+            <li><a href="ai.html" class="footer-link">AI & Predictive Vision</a></li>
+            <li><a href="software.html" class="footer-link">Distributed Cloud OS</a></li>
+            <li><a href="rnd.html" class="footer-link">Smart Hardware</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Direct Link -->
+        <div class="col-lg-3 col-md-4">
+          <h5 class="text-white sub-heading mb-4">Telemetry Dispatch</h5>
+          <p class="text-muted-custom small">Subscribe to our monthly whitepapers on cyber-physical automation and edge intelligence.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed to AncomeVortex Telemetry Dispatch!'); this.reset();">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control cyber-form-control" placeholder="corp.email@domain.com" required>
+              <button class="btn btn-cyber-primary" type="submit"><i class="bi bi-send"></i></button>
+            </div>
+          </form>
+          <div class="small font-mono text-dim">
+            <i class="bi bi-geo-alt text-cyan"></i> Silicon Vortex Labs & Global HQs
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div class="text-dim small font-mono">
+          &copy; 2026 AncomeVortex IoT & TechSolutions. All Rights Reserved.
+        </div>
+        <div class="d-flex gap-4 small font-mono text-dim">
+          <a href="#" class="text-dim text-decoration-none hover-cyber-glow">Privacy Policy</a>
+          <a href="#" class="text-dim text-decoration-none hover-cyber-glow">Security Architecture</a>
+          <a href="#" class="text-dim text-decoration-none hover-cyber-glow">Terms of Deployment</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div id="btn-back-to-top" title="Back to Top">
+    <i class="bi bi-chevron-up"></i>
+  </div>
+
+  <!-- Project Blueprint Modal -->
+  <div class="modal fade" id="projectDetailModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content modal-content-glass">
+        <div class="modal-header modal-header-glass">
+          <div>
+            <span class="badge-cyber mb-1" id="projectModalCategory">Category</span>
+            <h4 class="modal-title text-gradient-cyan" id="projectModalTitle">Project Blueprint</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-cyber" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="rounded-3 overflow-hidden mb-4 border border-secondary border-opacity-25" style="max-height: 320px;">
+            <img src="" id="projectModalImage" alt="Blueprint" class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="mb-3">
+            <h6 class="text-white sub-heading">Technical Overview</h6>
+            <p class="text-muted-custom" id="projectModalDesc"></p>
+          </div>
+          <div class="blueprint-card mb-4">
+            <h6 class="text-cyan sub-heading mb-2"><i class="bi bi-diagram-3 me-2"></i>System Architecture</h6>
+            <p class="text-light small font-mono mb-0" id="projectModalArchitecture"></p>
+          </div>
+          <div class="mb-4">
+            <h6 class="text-white sub-heading mb-3">Key Performance Metrics</h6>
+            <div class="row g-2" id="projectModalMetrics"></div>
+          </div>
+          <div>
+            <h6 class="text-white sub-heading mb-2">Tech Stack Tags</h6>
+            <div id="projectModalTags" class="d-flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+        <div class="modal-footer modal-footer-glass">
+          <button type="button" class="btn btn-cyber-outline btn-cyber-sm" data-bs-dismiss="modal">Close</button>
+          <a href="contact.html" class="btn btn-cyber-primary btn-cyber-sm">Request Similar System</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom Core Scripts -->
+  <script src="js/auth.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration Workspace | AncomeVortex</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23030712' stroke='%2300f2fe' stroke-width='6'/><polygon points='50,18 78,74 22,74' fill='none' stroke='%2300f2fe' stroke-width='5'/><circle cx='50' cy='50' r='8' fill='%2300f2fe'/></svg>">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <div class="cyber-grid-bg"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 40 40" width="32" height="32">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+            <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-text" style="font-size: 1.15rem;">ANCOME<span>VORTEX</span></span>
+          <div class="text-dim font-mono" style="font-size: 0.65rem;">ADMIN OPS v4.2</div>
+        </div>
+      </div>
+
+      <div class="sidebar-profile">
+        <div class="d-flex align-items-center gap-3">
+          <img src="" alt="Avatar" class="user-avatar-sm user-avatar-target">
+          <div class="overflow-hidden">
+            <div class="fw-bold text-white text-truncate user-name-target">Admin Ops</div>
+            <span class="role-badge role-badge-admin user-role-badge-target">ADMINISTRATION</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link active" data-tab="tab-admin-overview" onclick="switchDashboardTab('tab-admin-overview')">
+            <i class="bi bi-speedometer2"></i> Operations Center
+          </a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link" data-tab="tab-admin-employees" onclick="switchDashboardTab('tab-admin-employees')">
+            <i class="bi bi-person-workspace"></i> Employee Roster
+          </a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link" data-tab="tab-admin-inquiries" onclick="switchDashboardTab('tab-admin-inquiries')">
+            <i class="bi bi-inbox-fill"></i> Client Inquiries
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer d-flex justify-content-between align-items-center">
+        <a href="index.html" class="text-muted-custom small text-decoration-none hover-cyber-glow">
+          <i class="bi bi-arrow-left-circle me-1"></i> Public Site
+        </a>
+        <button class="btn btn-sm btn-cyber-outline py-1 px-2" onclick="Auth.logout()">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-cyber-outline d-lg-none" id="sidebarToggle">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <h5 class="text-white mb-0 sub-heading d-none d-sm-block">Operations & Resource Management</h5>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <div class="d-none d-md-flex align-items-center gap-2 font-mono text-cyan small">
+            <i class="bi bi-record-circle text-warning animate-pulse-glow"></i> ADMIN ACTIVE
+          </div>
+          <button class="btn btn-sm btn-cyber-primary" onclick="Auth.logout()">
+            <i class="bi bi-power me-1"></i> Sign Out
+          </button>
+        </div>
+      </header>
+
+      <main class="dashboard-body">
+
+        <!-- TAB 1: OPERATIONS CENTER -->
+        <section id="tab-admin-overview" class="dashboard-tab-pane active">
+          <div class="row g-4 mb-4">
+            <div class="col-md-4">
+              <div class="glass-panel p-4">
+                <span class="text-muted-custom sub-heading small">Active Engineers</span>
+                <div class="text-cyan fw-bold fs-3 mt-1">3 on Duty</div>
+                <div class="text-dim small font-mono mt-1">Alpha & Beta Shifts</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="glass-panel p-4">
+                <span class="text-muted-custom sub-heading small">Pending Client Inquiries</span>
+                <div class="text-cyan fw-bold fs-3 mt-1">3 Telemetry Briefs</div>
+                <div class="text-dim small font-mono mt-1">1 Critical Priority</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="glass-panel p-4">
+                <span class="text-muted-custom sub-heading small">Team Productivity</span>
+                <div class="text-cyan fw-bold fs-3 mt-1">96.0% Avg</div>
+                <div class="text-dim small font-mono mt-1">Sprint Milestones Met</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inquiries Triage Card -->
+          <div class="cyber-table-card">
+            <div class="cyber-table-header">
+              <div>
+                <h6 class="text-white mb-0 sub-heading"><i class="bi bi-inbox-fill text-cyan me-2"></i>Incoming Client Inquiries (Triage & Assignment)</h6>
+                <span class="text-dim small font-mono">Assign engineering leads and approve project parameters</span>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table cyber-table">
+                <thead>
+                  <tr>
+                    <th>Client & Company</th>
+                    <th>Discipline</th>
+                    <th>Assign Engineering Lead</th>
+                    <th>Status</th>
+                    <th class="text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminInquiriesTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2: EMPLOYEE ROSTER -->
+        <section id="tab-admin-employees" class="dashboard-tab-pane" style="display: none;">
+          <div class="cyber-table-card">
+            <div class="cyber-table-header">
+              <div>
+                <h5 class="text-white mb-0 sub-heading"><i class="bi bi-person-workspace text-cyan me-2"></i>Engineering Roster & Shift Allocations</h5>
+                <span class="text-dim small font-mono">Monitor duty status, assigned project loads, and schedule shifts</span>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table cyber-table">
+                <thead>
+                  <tr>
+                    <th>Employee Name</th>
+                    <th>Specialty Domain</th>
+                    <th>Current Shift</th>
+                    <th>Status</th>
+                    <th>Productivity</th>
+                    <th class="text-end">Reassign Shift</th>
+                  </tr>
+                </thead>
+                <tbody id="adminEmployeesTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 3: INQUIRIES -->
+        <section id="tab-admin-inquiries" class="dashboard-tab-pane" style="display: none;">
+          <!-- Reuses the inquiries table -->
+          <div class="cyber-table-card">
+            <div class="cyber-table-header">
+              <h5 class="text-white mb-0 sub-heading"><i class="bi bi-inbox-fill text-cyan me-2"></i>All Client Inquiries</h5>
+            </div>
+            <div class="table-responsive">
+              <table class="table cyber-table">
+                <thead>
+                  <tr>
+                    <th>Client & Company</th>
+                    <th>Discipline</th>
+                    <th>Assign Engineering Lead</th>
+                    <th>Status</th>
+                    <th class="text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminInquiriesTableBodyDuplicate" class="sync-admin-inquiries"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Enforce Administration Access (Admins and Heads can access)
+    Auth.requireAuth(['admin', 'head']);
+  </script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

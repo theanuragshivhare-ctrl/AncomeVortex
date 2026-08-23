@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering & R&D Workspace | AncomeVortex</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23030712' stroke='%2300f2fe' stroke-width='6'/><polygon points='50,18 78,74 22,74' fill='none' stroke='%2300f2fe' stroke-width='5'/><circle cx='50' cy='50' r='8' fill='%2300f2fe'/></svg>">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <div class="cyber-grid-bg"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 40 40" width="32" height="32">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 2"/>
+            <polygon points="20,8 31,30 9,30" fill="rgba(0,242,254,0.15)" stroke="#00f2fe" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="#00f2fe"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-text" style="font-size: 1.15rem;">ANCOME<span>VORTEX</span></span>
+          <div class="text-dim font-mono" style="font-size: 0.65rem;">ENGINEERING HUB v4.2</div>
+        </div>
+      </div>
+
+      <div class="sidebar-profile">
+        <div class="d-flex align-items-center gap-3">
+          <img src="" alt="Avatar" class="user-avatar-sm user-avatar-target">
+          <div class="overflow-hidden">
+            <div class="fw-bold text-white text-truncate user-name-target">Lead Engineer</div>
+            <span class="role-badge role-badge-employee user-role-badge-target">EMPLOYEE / ENGINEER</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link active" data-tab="tab-emp-projects" onclick="switchDashboardTab('tab-emp-projects')">
+            <i class="bi bi-kanban"></i> Assigned Projects
+          </a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="sidebar-nav-link" data-tab="tab-emp-rnd" onclick="switchDashboardTab('tab-emp-rnd')">
+            <i class="bi bi-fingerprint"></i> R&D Innovation Lab
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer d-flex justify-content-between align-items-center">
+        <a href="index.html" class="text-muted-custom small text-decoration-none hover-cyber-glow">
+          <i class="bi bi-arrow-left-circle me-1"></i> Public Site
+        </a>
+        <button class="btn btn-sm btn-cyber-outline py-1 px-2" onclick="Auth.logout()">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-cyber-outline d-lg-none" id="sidebarToggle">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <h5 class="text-white mb-0 sub-heading d-none d-sm-block">Engineering & Systems Development</h5>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <div class="d-none d-md-flex align-items-center gap-2 font-mono text-cyan small">
+            <i class="bi bi-record-circle text-info animate-pulse-glow"></i> LAB HARDWARE ACTIVE
+          </div>
+          <button class="btn btn-sm btn-cyber-primary" onclick="Auth.logout()">
+            <i class="bi bi-power me-1"></i> Sign Out
+          </button>
+        </div>
+      </header>
+
+      <main class="dashboard-body">
+
+        <!-- TAB 1: ASSIGNED PROJECTS -->
+        <section id="tab-emp-projects" class="dashboard-tab-pane active">
+          <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+              <h4 class="text-gradient-cyan mb-1">My Assigned Project Blueprints</h4>
+              <p class="text-muted-custom small mb-0">Update sprint progress percentages and check off active engineering milestones</p>
+            </div>
+            <span class="badge-cyber mb-0"><i class="bi bi-check2-all me-1"></i> Auto-Syncing with Root</span>
+          </div>
+
+          <div class="row" id="employeeProjectsContainer"></div>
+        </section>
+
+        <!-- TAB 2: R&D INNOVATION LAB -->
+        <section id="tab-emp-rnd" class="dashboard-tab-pane" style="display: none;">
+          <div class="cyber-table-card">
+            <div class="cyber-table-header">
+              <div>
+                <h5 class="text-white mb-0 sub-heading"><i class="bi bi-fingerprint text-cyan me-2"></i>R&D Innovation Lab Registry</h5>
+                <span class="text-dim small font-mono">Log experimental breakthroughs and upgrade Technology Readiness Levels (TRL)</span>
+              </div>
+              <button class="btn btn-sm btn-cyber-primary" data-bs-toggle="modal" data-bs-target="#addRndModal">
+                <i class="bi bi-plus-circle me-1"></i> Log Experiment
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="table cyber-table">
+                <thead>
+                  <tr>
+                    <th>Prototype Initiative</th>
+                    <th>Technology Readiness Level</th>
+                    <th>Status</th>
+                    <th>Last Experiment Date</th>
+                    <th class="text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="employeeRndTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal: Add R&D Experiment -->
+  <div class="modal fade" id="addRndModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-glass">
+        <div class="modal-header modal-header-glass">
+          <h5 class="modal-title text-gradient-cyan">Log R&D Innovation Experiment</h5>
+          <button type="button" class="btn-close btn-close-cyber" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="addRndForm" onsubmit="handleAddRndLog(event)">
+          <div class="modal-body p-4">
+            <div class="mb-3">
+              <label class="cyber-form-label">Initiative Title *</label>
+              <input type="text" class="form-control cyber-form-control" id="newRndTitle" placeholder="Micro-UAV Flapping Wing Actuator" required>
+            </div>
+            <div class="mb-3">
+              <label class="cyber-form-label">Technology Readiness Level (TRL) *</label>
+              <select class="form-select cyber-form-control cyber-select" id="newRndTrl" required>
+                <option value="TRL-3 (Analytical & Proof-of-Concept)">TRL-3 (Analytical & Proof-of-Concept)</option>
+                <option value="TRL-4 (Component Laboratory Validation)">TRL-4 (Component Laboratory Validation)</option>
+                <option value="TRL-5 (Integrated Environmental Testing)">TRL-5 (Integrated Environmental Testing)</option>
+                <option value="TRL-6 (System Prototype Demo)" selected>TRL-6 (System Prototype Demo)</option>
+                <option value="TRL-7 (Integrated Field Prototype)">TRL-7 (Integrated Field Prototype)</option>
+                <option value="TRL-8 (Qualified System)">TRL-8 (Qualified System)</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="cyber-form-label">Experiment Observations & Notes *</label>
+              <textarea class="form-control cyber-form-control" id="newRndNotes" rows="4" placeholder="Detail hardware frequency responses, power consumption, and mechanical test results..." required></textarea>
+            </div>
+          </div>
+          <div class="modal-footer modal-footer-glass">
+            <button type="button" class="btn btn-cyber-outline btn-sm" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-cyber-primary btn-sm">Log Experiment Record</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Enforce Employee / Admin / Head access
+    Auth.requireAuth(['employee', 'admin', 'head']);
+  </script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
